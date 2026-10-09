@@ -818,7 +818,7 @@ function paintMusic(){
 function playMusic(){
   if(!soundOn) return;
   music.volume=0; const p=music.play();
-  if(p&&p.then) p.then(()=>{ let v=0; const t=setInterval(()=>{ v=Math.min(.25,v+.05); music.volume=v; if(v>=.25) clearInterval(t); },80); }).catch(()=>{});
+  if(p&&p.then) p.then(()=>{ let v=0; const t=setInterval(()=>{ v=Math.min(.15,v+.05); music.volume=v; if(v>=.15) clearInterval(t); },80); }).catch(()=>{});
 }
 function stopMusic(){ music.pause(); }
 music.addEventListener('play',paintMusic); music.addEventListener('pause',paintMusic); music.addEventListener('ended',paintMusic);
